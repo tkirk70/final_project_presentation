@@ -3,7 +3,7 @@ function init() {
   var selector = d3.select("#selDataset");
 
   // Use the list of sample names to populate the select options
-  d3.json("stocks_data.json").then((data) => {
+  d3.csv("stocks_data.csv").then((data) => {
     var sampleNames = data.ticker;
     // console.log(data)
 
