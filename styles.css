@@ -21,5 +21,5 @@ a.nav-link {
   padding-right: 17px;
 }
 
-.jumbotron.h1 {color: yellow;
+.jumbotron.h1 {color: yellow !important;
 }
