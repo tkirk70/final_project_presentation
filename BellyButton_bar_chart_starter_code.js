@@ -3,8 +3,8 @@ function init() {
   var selector = d3.select("#selDataset");
 
   // Use the list of sample names to populate the select options
-  d3.json("samples.json").then((data) => {
-    var sampleNames = data.names;
+  d3.json("stocks_data.json").then((data) => {
+    var sampleNames = data.ticker;
     // console.log(data)
 
     sampleNames.forEach((sample) => {
@@ -31,7 +31,7 @@ function optionChanged(newSample) {
 
 }
 
-// Demographics Panel 
+// Demographics Panel
 function buildMetadata(sample) {
   d3.json("samples.json").then((data) => {
     var metadata = data.metadata;
@@ -56,9 +56,9 @@ function buildMetadata(sample) {
 
 // 1. Create the buildCharts function.
 function buildCharts(sample) {
-  // 2. Use d3.json to load and retrieve the samples.json file 
+  // 2. Use d3.json to load and retrieve the samples.json file
   d3.json("samples.json").then((data) => {
-    // 3. Create a variable that holds the samples array. 
+    // 3. Create a variable that holds the samples array.
     var sample_array = data.samples;
     console.log(sample_array)
     // 4. Create a variable that filters the samples for the object with the desired sample number.
@@ -83,23 +83,23 @@ function buildCharts(sample) {
     // console.log(sliced_otu_ids_to_string);
     // yticks = {"OTU": otu_ids   }
     // 7. Create the yticks for the bar chart.
-    // Hint: Get the the top 10 otu_ids and map them in descending order  
-    //  so the otu_ids with the most bacteria are last. 
+    // Hint: Get the the top 10 otu_ids and map them in descending order
+    //  so the otu_ids with the most bacteria are last.
     // yticks = sample_array_filtered_one.map(function (a, b) {
     //   return b.sample_values - a.sample_values
     // });
     // console.log(yticks);
     yticks = otu_ids.sort(function (a, b) {
       return parseFloat(b.sample_values) - parseFloat(a.sample_values);
-    
+
     });
-    
+
     console.log(yticks);
     OTU_name = []
     yticks.forEach(value => OTU_name.push(`OTU ${value}`));
     console.log(OTU_name);
 
-  
+
     // yticks = yticks.reverse();
     var trace = {
       x: sample_values,
@@ -110,11 +110,11 @@ function buildCharts(sample) {
       orientation: "h"
     };
       console.log(yticks);
-    // 8. Create the trace for the bar chart. 
+    // 8. Create the trace for the bar chart.
     var barData = [trace];
 
 
-    // 9. Create the layout for the bar chart. 
+    // 9. Create the layout for the bar chart.
     var barLayout = {
       title: `Top 10 Bacteria Strains for ${sample}`,
       yaxis: {autorange : 'reversed'},
@@ -125,7 +125,7 @@ function buildCharts(sample) {
 
 
     };
-    // 10. Use Plotly to plot the data with the layout. 
+    // 10. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bar", barData, barLayout);
 
     // 1. Create the trace for the bubble chart.
@@ -163,7 +163,7 @@ function buildCharts(sample) {
     Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
 
-    
+
     var metadata = data.metadata;
     // Filter the data for the object with the desired sample number
     var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
@@ -179,41 +179,41 @@ function buildCharts(sample) {
                   {range: [4, 6], color: 'yellow'},
                   {range: [6, 8], color: 'lightgreen'},
                   {range: [8, 10], color: 'green'}]},
-                  
-      
+
+
         value: result.wfreq,
         title: { text: "Scrubs per Week<br>Subtext" },
         type: "indicator",
         mode: "gauge+number"
-        
-        
-        
-        
-        
+
+
+
+
+
         // title: {
         //   text:
         //     "Accounts<br><span style='font-size:0.8em;color:gray'>Subtitle</span><br><span style='font-size:0.8em;color:gray'>Subsubtitle</span>"
         // },
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
       }
     ];
 
     // 5. Create the layout for the gauge chart.
-    
-    
+
+
     var gaugeLayout = {
       title: `Belly Button Washing Frequency for ${sample}`
-      
-      
-      
-      
 
-      
+
+
+
+
+
 
     };
 
