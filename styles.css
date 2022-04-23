@@ -1,5 +1,22 @@
-div.jumbotron {background-color: blueviolet;
+body {
+  background-color : rgb(211,211,211);
+}
+h6 {font-weight: bold;
 }
 
-h6 {font-weight: bold;
+.jumbotron {
+  background-image : url('jumbo.jpg');
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: right;
+}
+
+p {
+  padding-right: 41px;
+  padding-left: 41px;
+  font-size: 17px;
+}
+
+a.nav-link {
+  padding-right: 17px;
 }
