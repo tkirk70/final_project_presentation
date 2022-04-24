@@ -5,6 +5,7 @@ h6 {font-weight: bold;
 }
 
 .jumbotron {
+  font: yellow;
   background-image : url('jumbo.png');
   background-repeat: no-repeat;
   background-color: white;
