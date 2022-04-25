@@ -41,21 +41,14 @@ d3.csv("stockprice_daily_aapl.csv").then(function(data) {
         name: "Ticker Closing Price",
         type: "line"
       };
-        console.log(yticks);
+        // console.log(yticks);
       // 8. Create the trace for the bar chart.
       var lineData = [trace];
-
-
       // 9. Create the layout for the bar chart.
       var lineLayout = {
         title: `10 years of data for ${sample}`,
         yaxis: {autorange : 'reversed'},
         xaxis: {title: 'Ticker Close'}
-
-
-
-
-
       };
       // 10. Use Plotly to plot the data with the layout.
       Plotly.newPlot("line", lineData, lineLayout);
