@@ -25,11 +25,15 @@ window.onclick = function(event) {
 //         console.log(data[i].close);
 //     }
 // });
+//
+// d3.csv("stockprice_daily_aapl.csv")
+//     .row(function(d) { return {key: d.key, value: +d.value}; })
+//     .get(function(error, rows) { console.log(rows); });
 
-d3.csv("stockprice_daily_aapl.csv")
-    .row(function(d) { return {key: d.key, value: +d.value}; })
-    .get(function(error, rows) { console.log(rows); });
 
+d3.csv("stockprice_daily_aapl.csv").then(function(data) {
+  console.log(data[0]);
+});
 var trace = {
       x: data[i].date,
       y: data[i].close,
