@@ -1,4 +1,4 @@
-// Display stock financials and graphs for 7 stocks in interactive webpage.
+// Display stock financials and graphs for 9 stocks in interactive webpage.
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -18,3 +18,36 @@ window.onclick = function(event) {
     }
   }
 }
+
+d3.csv("stockprice_daily_aapl.csv", function(data) {
+    for (var i = 0; i < data.length; i++) {
+        console.log(data[i].date);
+        console.log(data[i].close);
+    }
+});
+
+var trace = {
+      x: data[i].date,
+      y: data[i].close,
+      // text:
+      name: "Ticker Closing Price",
+      type: "line"
+    };
+      console.log(yticks);
+    // 8. Create the trace for the bar chart.
+    var lineData = [trace];
+
+
+    // 9. Create the layout for the bar chart.
+    var lineLayout = {
+      title: `10 years of data for ${sample}`,
+      yaxis: {autorange : 'reversed'},
+      xaxis: {title: 'Ticker Close'}
+
+
+
+
+
+    };
+    // 10. Use Plotly to plot the data with the layout.
+    Plotly.newPlot("line", lineData, lineLayout);
