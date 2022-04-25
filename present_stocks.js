@@ -35,8 +35,8 @@ d3.csv("stockprice_daily_aapl.csv").then(function(data) {
   console.log(data[0]);
 });
 var trace = {
-      x: data[i].date,
-      y: data[i].close,
+      x: data.date,
+      y: data.close,
       // text:
       name: "Ticker Closing Price",
       type: "line"
