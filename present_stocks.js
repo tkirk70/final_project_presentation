@@ -45,11 +45,11 @@ function processData(allRows) {
   // console.log(allRows['date'])
 
   for (var i=0; i<allRows.length; i++) {
-    console.log(allRows[i]['date'])
+    console.log(allRows['date'])
     // row = allRows[i];
     // console.log(row);
-    x.push( allRows[i]['date'] );
-    y.push( allRows[i]['close'] );
+    x.push( allRows['date'] );
+    y.push( allRows['close'] );
   }
   console.log( 'X',x, 'Y',y, 'SD',standard_deviation );
   makePlotly( x, y, standard_deviation );
