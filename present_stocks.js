@@ -44,7 +44,7 @@ function processData(allRows) {
   var x = [], y = [], standard_deviation = [];
   // console.log(allRows['date'])
 
-  for (var i=0; i<data.length; i++) {
+  for (var i=0; i<allRows.length; i++) {
     console.log(allRows['date'])
     // row = allRows[i];
     // console.log(row);
