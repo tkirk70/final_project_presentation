@@ -46,7 +46,7 @@ d3.csv("stockprice_daily_aapl.csv").then(function(data) {
       var lineData = [trace];
       // 9. Create the layout for the bar chart.
       var lineLayout = {
-        title: `10 years of data for ${sample}`,
+        title: `10 years of data for ${data.ticker}`,
         yaxis: {autorange : 'reversed'},
         xaxis: {title: 'Ticker Close'}
       };
