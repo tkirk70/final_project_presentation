@@ -40,7 +40,7 @@ function makeplot() {
 
 function processData(allRows) {
 
-  console.log(allRows);
+  // console.log(allRows);
   var x = [], y = [], standard_deviation = [];
 
   for (var i=0; i<allRows.length; i++) {
