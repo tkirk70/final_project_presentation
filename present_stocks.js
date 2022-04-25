@@ -45,8 +45,8 @@ function processData(allRows) {
 
   for (var i=0; i<allRows.length; i++) {
     row = allRows[i];
-    x.push( row[date] );
-    y.push( row[close] );
+    x.push( row.date );
+    y.push( row.close );
   }
   console.log( 'X',x, 'Y',y, 'SD',standard_deviation );
   makePlotly( x, y, standard_deviation );
