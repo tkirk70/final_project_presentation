@@ -31,25 +31,35 @@ window.onclick = function(event) {
 //     .get(function(error, rows) { console.log(rows); });
 
 
-d3.csv("stockprice_daily_aapl.csv").then(function(data) {
-  console.log(data[0]);
 
-  var trace = {
-        x: data.date,
-        y: data.close,
-        // text:
-        name: "Ticker Closing Price",
-        type: "line"
-      };
-        // console.log(yticks);
-      // 8. Create the trace for the bar chart.
-      var lineData = [trace];
-      // 9. Create the layout for the bar chart.
-      var lineLayout = {
-        title: `10 years of data for ${data.ticker}`,
-        // yaxis: {autorange : 'reversed'},
-        xaxis: {title: 'Date'}
-      };
-      // 10. Use Plotly to plot the data with the layout.
-      Plotly.newPlot("line", lineData, lineLayout);
-});
+
+function makeplot() {
+  d3.csv("stockprice_daily_aapl.csv", function(data){ processData(data) } );
+
+};
+
+function processData(allRows) {
+
+  console.log(allRows);
+  var x = [], y = [], standard_deviation = [];
+
+  for (var i=0; i<allRows.length; i++) {
+    row = allRows[i];
+    x.push( row['date'] );
+    y.push( row['close'] );
+  }
+  console.log( 'X',x, 'Y',y, 'SD',standard_deviation );
+  makePlotly( x, y, standard_deviation );
+}
+
+function makePlotly( x, y, standard_deviation ){
+  var plotDiv = document.getElementById("plot");
+  var traces = [{
+    x: x,
+    y: y
+  }];
+
+  Plotly.newPlot('line', traces,
+    {title: 'Plotting CSV data from AAPL call'});
+};
+  makeplot();
