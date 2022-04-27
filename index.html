@@ -21,18 +21,20 @@
         </div>
         <div class="row">
           <div class="col-md-3 dropdown">
-            <button onclick="myFunction()" class="dropbtn">Tickers</button>
-            <div id="myDropdown" class="dropdown-content">
-              <a href="#">AAPL</a>
-              <a href="#">AMZN</a>
-              <a href="#">MSFT</a>
-              <a href="#">GME</a>
-              <a href="#">AMC</a>
-              <a href="#">TSLA</a>
-              <a href="#">FB</a>
-              <a href="#">GOOGL</a>
-              <a href="#">EVOL</a>
-            </div>
+            <button onclick="update()" class="dropbtn">Tickers</button>
+              <select id="myList" onChange='update()'>
+                <option value="aapl">AAPL</option>
+                <option value="amzn">AMZN</option>
+                <option value="MSFT">MSFT</option>
+                <option value="GME">GME</option>
+                <option value="AMC">AMC</option>
+                <option value="TSLA">TSLA</option>
+                <option value="FB">FB</option>
+                <option value="GOOGL">GOOGL</option>
+                <option value="EVOL">EVOL</option>
+              </select>
+              <input type="text" id="value">
+		          <input type="text" id="text">
           </div>
           <div class="col-md-9">
             <img src="LSTM_Summary.png" alt="Machine Learning Summary">
