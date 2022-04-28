@@ -1,6 +1,6 @@
 // Predictions Graph
 
-var url = 'https://raw.githubusercontent.com/kaalrok/Final-Project/main/csv_files/stock-predictions.csv?token=GHSAT0AAAAAABT75FH5U42CLVFMHFL2D5S4YTJUOZQ';
+var url = 'https://github.com/kaalrok/Final-Project/blob/e689102fc7c298570617cb3537ed0c9f98c4da34/csv_files/stock-predictions.csv';
 
 d3.csv(url).then((data) => {
     var sampleNames = data[0].Ticker;
