@@ -43,14 +43,19 @@ var url = 'https://raw.githubusercontent.com/tkirk70/final_project_presentation/
     console.log(value);
     console.log(text);
     d3.csv(url).then((data) => {
+      console.log(data.length)
       var sampleNames = data[0].Ticker;
       var y_real = [];
       var x = [];
       var y_pred = [];
       for (var i = 0; i < data.length; i++) {
-        x.push(data[i].Date);
-        y_real.push(data[i].Close);
-        y_pred.push(data[i].Predictions)
+        // console.log(value);
+        // console.log(text);
+        console.log(data[i].Ticker);
+        if (data[i].Ticker = value){
+          x.push(data[i].Date);
+          y_real.push(data[i].Close);
+          y_pred.push(data[i].Predictions)};
       };
 
 
