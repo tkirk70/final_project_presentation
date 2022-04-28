@@ -39,7 +39,7 @@ function update() {
 
 
 
-var url = 'https://raw.githubusercontent.com/kaalrok/Final-Project/main/csv_files/stock-predictions.csv?token=GHSAT0AAAAAABT75FH57Q76G4IVWRN5WHVCYTJ5MNA';
+var url = 'stock_predictions.csv';
     console.log(value);
     console.log(text);
     d3.csv(url).then((data) => {
