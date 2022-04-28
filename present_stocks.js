@@ -39,7 +39,7 @@ function update() {
 
 
 
-var url = `https://github.com/tkirk70/final_project_presentation/blob/863ea5b58935e548e7c574e842d4d58d2976f218/box_o_files/${value}.csv`;
+var url = `box_o_files/${value}.csv`;
     console.log(value);
     console.log(text);
     d3.csv(url).then((data) => {
