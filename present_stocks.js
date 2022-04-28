@@ -39,12 +39,11 @@ function update() {
 
 
 
-var url = 'https://raw.githubusercontent.com/tkirk70/final_project_presentation/main/stock_predictions.csv';
+var url = `../box_o_files/${value}`;
     console.log(value);
     console.log(text);
     d3.csv(url).then((data) => {
       console.log(data.length)
-      var sampleNames = data[0].Ticker;
       var y_real = [];
       var x = [];
       var y_pred = [];
