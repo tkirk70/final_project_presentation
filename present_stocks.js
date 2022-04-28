@@ -39,7 +39,7 @@ function update() {
 
 
 
-var url = `box_o_files/${value}`;
+var url = `box_o_files/stockprice_daily_${value}.csv`;
     console.log(value);
     console.log(text);
     d3.csv(url).then((data) => {
