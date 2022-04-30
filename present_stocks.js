@@ -74,10 +74,13 @@ var url = `box_o_files/${value}.csv`;
       var data = [trace1, trace2];
 
       var layout = {
-        title: `Real versus Predicted Returns ${value}`,
-        font: {size: 19},
+        title: {text: `Real versus Predicted Returns ${value}`,
+        font: {size: 19}
+        },
         xaxis: {
-          title: 'Year',
+          title: {text: 'Year'},
+          font: {size: 17}
+        },
           tickmode: "linear", //  If "linear", the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick`
           tick0: '11/6/2019',
           dtick: 30 //* 24 * 60 * 60 * 1000 // milliseconds
