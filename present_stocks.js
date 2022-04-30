@@ -78,7 +78,7 @@ var url = `box_o_files/${value}.csv`;
         font: {size: 19}
         },
         xaxis: {
-          title: {text: 'Year', size: 17},
+          title: {text: 'Date', size: 17},
           // font: {size: 17}
           tickmode: "linear", //  If "linear", the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick`
           tick0: '11/6/2019',
