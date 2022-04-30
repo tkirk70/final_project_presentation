@@ -78,15 +78,15 @@ var url = `box_o_files/${value}.csv`;
         font: {size: 19}
         },
         xaxis: {
-          {title: {text: 'Year'},
+          title: {text: 'Year'},
           font: {size: 17}
-          },
+        },
           tickmode: "linear", //  If "linear", the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick`
           tick0: '11/6/2019',
-          dtick: 30}, //* 24 * 60 * 60 * 1000 // milliseconds
+          dtick: 30, //* 24 * 60 * 60 * 1000 // milliseconds
         yaxis: {
           title: 'Stock Value in US Dollars ($)'
-        }
+          }
       }
 
 Plotly.newPlot('predictions', data, layout);
