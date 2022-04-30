@@ -61,13 +61,13 @@ var url = `box_o_files/${value}.csv`;
       var trace1 = {
         x: x,
         y: y_real,
-        name: 'Actual'
+        name: 'Actual',
         type: 'line'
       };
       var trace2 = {
         x: x,
         y: y_pred,
-        name: 'Predicted'
+        name: 'Predicted',
         type: 'line'
       };
       var data = [trace1, trace2];
