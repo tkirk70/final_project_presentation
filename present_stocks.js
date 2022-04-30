@@ -78,7 +78,7 @@ var url = `box_o_files/${value}.csv`;
           title: 'Year',
           tickmode: "linear", //  If "linear", the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick`
           tick0: '11/6/2019',
-          dtick: 30 * 24 * 60 * 60 * 1000 // milliseconds
+          dtick: 30 //* 24 * 60 * 60 * 1000 // milliseconds
         },
         yaxis: {
           title: 'Stock Value in US Dollars ($)'
