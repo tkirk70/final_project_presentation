@@ -61,11 +61,13 @@ var url = `box_o_files/${value}.csv`;
       var trace1 = {
         x: x,
         y: y_real,
+        name: 'Actual'
         type: 'line'
       };
       var trace2 = {
         x: x,
         y: y_pred,
+        name: 'Predicted'
         type: 'line'
       };
       var data = [trace1, trace2];
@@ -73,7 +75,10 @@ var url = `box_o_files/${value}.csv`;
       var layout = {
         title: `Real versus Predicted Returns ${value}`,
         xaxis: {
-          title: 'Year'
+          title: 'Year',
+          tickmode: "linear", //  If "linear", the placement of the ticks is determined by a starting position `tick0` and a tick step `dtick`
+          tick0: '11-6-2019',
+          dtick: 30 * 24 * 60 * 60 * 1000 // milliseconds
         },
         yaxis: {
           title: 'Stock Value in US Dollars ($)'
